@@ -1,0 +1,30 @@
+# Cursor AI 개발 룰
+
+> **참고**: 상세한 개발 룰은 `.cursor/rules/rules.md` 파일을 참조하세요.
+> Cursor는 `.cursor/rules/` 폴더의 파일들을 자동으로 읽습니다.
+
+## 빠른 참조
+
+### 핵심 규칙
+1. **백엔드 코드 수정 금지**: `apps/backend` 폴더는 절대 수정하지 마세요
+2. **필수 기능**: 가격대별 구매 빈도 차트, 고객 목록 및 검색, 고객 상세 구매 내역
+3. **기술 스택**: React 18.3.1, TypeScript, Vite, Tailwind CSS, Shadcn UI, React Query, Zustand
+
+### 네이밍 규칙
+- 컴포넌트명: 파스칼 케이스
+- 변수/함수명: 카멜 케이스
+- 인터페이스명: `I` prefix
+- 폴더명: 스네이크 케이스
+
+### 파일 구조
+- 페이지 컴포넌트: `components/pages/[페이지명]/`
+- API 클라이언트: `hooks/client/[name]/`
+- 타입 정의: `models/interface/`
+
+## 상세 규칙 문서
+- `.cursor/rules/rules.md`: 핵심 개발 룰 (이 파일)
+- `.cursor/rules/development-rules.md`: 상세한 개발 룰 및 요구사항 명세서
+- `.cursor/rules/agent-prompt.md`: 단계별 개발 가이드 및 구현 예시
+
+> **참고**: Cursor는 `.cursor/rules/` 폴더의 모든 `.md` 파일을 자동으로 읽습니다.
+
