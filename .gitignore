@@ -5,6 +5,10 @@ node_modules/
 dist/
 build/
 
+# Ignore test coverage
+coverage/
+*.lcov
+
 # Ignore environment files
 .env
 

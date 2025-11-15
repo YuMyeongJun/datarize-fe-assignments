@@ -11,11 +11,11 @@ export interface ICustomerListStore {
 
 export type CustomerListStore = ReturnType<typeof createCustomerListStore>;
 
-export const createCustomerListStore = () => {
+export const createCustomerListStore = (initialState?: Partial<ICustomerListStore>) => {
   return createStore<ICustomerListStore>()((set) => ({
-    searchName: '',
-    sortBy: 'id',
-    selectedCustomerId: null,
+    searchName: initialState?.searchName ?? '',
+    sortBy: initialState?.sortBy ?? 'id',
+    selectedCustomerId: initialState?.selectedCustomerId ?? null,
     setSearchName: (name) => {
       set({ searchName: name });
     },

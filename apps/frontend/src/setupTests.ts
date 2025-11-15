@@ -17,3 +17,17 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 })
+
+// Mock ECharts
+jest.mock('echarts-for-react', () => {
+  const React = require('react')
+  return {
+    __esModule: true,
+    default: ({ option }: { option: any }) => {
+      return React.createElement('div', {
+        'data-testid': 'echarts-mock',
+        'data-option': JSON.stringify(option),
+      })
+    },
+  }
+})

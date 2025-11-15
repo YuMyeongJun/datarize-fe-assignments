@@ -9,8 +9,14 @@ export interface ICustomerListViewModel {
 // eslint-disable-next-line react-refresh/only-export-components
 export const CustomerListViewModel = createContext<ICustomerListViewModel | undefined>(undefined)
 
-export const CustomerListViewModelProvider = ({ children }: { children: React.ReactNode }) => {
-  const store = createCustomerListStore()
+export const CustomerListViewModelProvider = ({
+  children,
+  initialState
+}: {
+  children: React.ReactNode
+  initialState?: Partial<import('./CustomerListStore').ICustomerListStore>
+}) => {
+  const store = createCustomerListStore(initialState)
 
   return (
     <CustomerListViewModel.Provider value={{ store }}>{children}</CustomerListViewModel.Provider>

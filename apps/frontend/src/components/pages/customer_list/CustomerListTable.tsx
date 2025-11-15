@@ -4,6 +4,7 @@ import { useStore } from 'zustand'
 import { CustomerListViewModel } from './CustomerListViewModel'
 import { LoadingSpinner } from '@/components/common/LoadingSpinner'
 import Skeleton from 'react-loading-skeleton'
+import classNames from 'classnames'
 
 export interface ICustomerListTableProps {
   customers: ICustomer[]
@@ -45,7 +46,7 @@ export const CustomerListTable = ({ customers, isLoading }: ICustomerListTablePr
           <LoadingSpinner size="lg" />
         </div>
       )}
-      <div className={isLoading ? 'opacity-50' : 'opacity-100 transition-opacity duration-300'}>
+      <div className={classNames('max-h-[500px] overflow-y-auto opacity-100 transition-opacity duration-300', { 'opacity-50': isLoading })}>
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
